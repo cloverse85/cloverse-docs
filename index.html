@@ -146,6 +146,7 @@ tr:hover td { background: #fffafa; }
         <div class="lang-option" data-lang="ko">🇰🇷 한국어</div>
         <div class="lang-option" data-lang="th">🇹🇭 ไทย</div>
         <div class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</div>
+        <div class="lang-option" data-lang="tl">🇵🇭 Filipino</div>
       </div>
     </div>
   </div>
@@ -1119,6 +1120,134 @@ const translations = {
     contract_q1_title: "\"Sözleşme Adresi\" nedir?",
     contract_q1_body: "Sözleşme adresi, oyunu çalıştıran akıllı sözleşmenin zincir üzerindeki konumudur. Bunu kodun kendisi için herkese açık bir posta adresi olarak düşünün. Herkes bunu bir blok gezgininde (Chiliz Chain için ChiliScan gibi) arayarak sözleşmenin ne yaptığını inceleyebilir ve platformun tam olarak iddia ettiği şeyi kullandığını doğrulayabilir.",
     contract_q1_tail: "Fiyat beslemesinin meşru olduğundan emin olmak isterseniz, bu adresi bir blok gezginine kopyalamak bunu yapmanın yoludur."
+  },
+  tl: {
+    sidebar_overview_label: "PANGKALAHATAN",
+    sidebar_guide_label: "GABAY NG USER",
+    sidebar_infra_label: "IMPRASTRUKTURA",
+    nav_overview: "Pangkalahatang-ideya",
+    nav_how: "Paano Ito Gumagana",
+    nav_how_to_use: "Paano Gamitin",
+    nav_mechanics: "Mekanika at Bayarin",
+    nav_outcomes: "Resulta at Panuntunan",
+    nav_oracle: "Mga Price Feed (Oracle)",
+    nav_contracts: "Mga Contract Address",
+    search_placeholder: "Maghanap...",
+
+    overview_title: "UP &amp; DOWN",
+    overview_subtitle: "Hulaan ang trend, itaas ang iyong taya, at manalo.",
+    overview_p1: "Ang UP &amp; DOWN ay isang desentralisado, mataas na katumpakan na prediction platform na binuo sa Chiliz Chain. Pinapayagan ka nitong samantalahin ang mga paggalaw ng presyo ng CHZ nang real-time.",
+    overview_callout_title: "Sa madaling salita:",
+    overview_callout_body: "Sa tingin mo ba ay mas mataas ang presyo ng CHZ sa loob ng 10 minuto kaysa ngayon? Tumaya ng UP. Sa tingin mo mas mababa? Tumaya ng DOWN. Kung tama ka, hahatiin mo ang prize pool kasama ang lahat ng nasa panig mo.",
+
+    how_title: "Buod: Paano Ito Gumagana",
+    how_subtitle: "Hakbang-hakbang na buod ng daloy ng prediksyon.",
+    how_step1: "Ang UP &amp; DOWN ay eksklusibong sumusuporta sa pares na <strong>CHZ/USD</strong>.",
+    how_step2: "Hulaan kung ang presyo ng CHZ ay magiging mas mataas (<strong>UP</strong>) o mas mababa (<strong>DOWN</strong>) kaysa sa Locked Price kapag natapos ang 10-minutong round.",
+    how_step3: "Ilagay ang nais mong halaga ng CHZ.",
+    how_step4: "Kapag naisumite na ang iyong entry para sa isang \"LIVE\" round, hindi na ito <strong>maaaring i-edit, kanselahin, o tanggalin</strong>.",
+    how_step5_intro: "Panalo o talo:",
+    how_step5_up: "<strong>Nanalo ang UP:</strong> Kung Closed Price &gt; Locked Price sa katapusan ng round.",
+    how_step5_down: "<strong>Nanalo ang DOWN:</strong> Kung Closed Price &lt; Locked Price sa katapusan ng round.",
+
+    how_q1_title: "Ano ang Locked Price?",
+    how_q1_body: "Ang Locked Price ay ang presyo ng CHZ/USD na nakuha sa eksaktong sandali ng pagsisimula ng isang round. Ito ang reference point na pinagbabatayan ng iyong prediksyon; isipin mo itong \"starting line\". Anuman ang iyong hulaan (UP o DOWN), hinuhulaan mo kung nasaan ang CHZ kaugnay ng numerong ito makalipas ang 10 minuto.",
+    how_q1_ex_label: "Halimbawa.",
+    how_q1_ex_body: " May bagong round na bumubukas nang 14:00. Sa eksaktong sandaling iyon, ang CHZ/USD ay $0.0820. Iyon ang nagiging Locked Price para sa round na ito. Makalipas ang sampung minuto, kung ang CHZ ay mas mataas sa $0.0820 → nanalo ang UP. Mas mababa sa $0.0820 → nanalo ang DOWN.",
+
+    how_q2_title: "Ano ang Closed Price?",
+    how_q2_body: "Ang Closed Price ay ang presyo ng CHZ/USD na nakuha sa eksaktong sandali ng pagtatapos ng round, 10 minuto pagkatapos maitakda ang Locked Price. Ito ang numerong magpapasya kung sino ang mananalo.",
+    how_q2_ex_label: "Halimbawa.",
+    how_q2_ex_body: " Pagpapatuloy mula sa itaas: nagsimula ang round nang 14:00 na may Locked Price na $0.0820. Sa 14:10, ang CHZ/USD ay $0.0834. Ang Closed Price ($0.0834) ay mas mataas kaysa sa Locked Price ($0.0820), kaya nanalo ang UP sa round na ito.",
+
+    how_q3_title: "Ano ang isang \"Round\"?",
+    how_q3_body: "Ang isang round ay isang buong 10-minutong siklo ng prediksyon. Ang bawat round ay may tatlong yugto:",
+    how_q3_p1: "<strong>Open (Pagtaya):</strong> Pumipili ang mga manlalaro ng UP o DOWN at isinusumite ang kanilang mga entry.",
+    how_q3_p2: "<strong>Live (Naka-lock):</strong> Naka-lock na ang mga entry, naitakda na ang Locked Price, at malayang gumagalaw ang presyo sa merkado.",
+    how_q3_p3: "<strong>Close (Pag-settle):</strong> Naitala na ang Closed Price, napagpasyahan na ang panig na nanalo, at maaari nang i-claim ang mga gantimpala.",
+    how_q3_tail: "Tuloy-tuloy ang mga round, sunod-sunod. Habang nise-settle ang isang round, tumatanggap na ng entry ang susunod, kaya laging may round na maaaring salihan.",
+
+    how_q4_title: "Bakit hindi ko makansela o ma-edit ang isang LIVE entry?",
+    how_q4_body: "Kapag naging LIVE na ang isang round, naitakda na ang Locked Price at nagsisimula nang mapagpasyahan ang resulta nang real-time. Kung maaaring mag-edit o kanselahin ng mga manlalaro sa puntong ito, sinumang nagmamasid sa presyo ay maaaring umurong sa sandaling gumalaw ito laban sa kanila, na hindi patas para sa lahat ng nasa pool. Upang mapanatiling patas ang laro para sa lahat ng manlalaro, ang bawat entry ay pinal sa sandaling maging live ang round.",
+
+    htu_title: "Paano Gamitin ang UP &amp; DOWN",
+    htu_subtitle: "Hakbang-hakbang na gabay sa paglalaro ng iyong unang round.",
+    htu_s1_title: "Hakbang 1. Basahin ang chart at ang Locked Price",
+    htu_s1_body: "Sa itaas ng pahina ay makikita mo ang live na CHZ/USD chart. Ang <strong>LOCK / PRICE</strong> indicator (kanang itaas, berdeng kahon) ay nagpapakita ng Locked Price para sa kasalukuyang round at ng pinakabagong presyo ng CHZ. Ang <strong>LOCKED ▲</strong> label sa loob ng chart ay tumuturo kung nasaan ang Locked Price sa price axis. Kung ang Locked Price ay nasa labas ng nakikitang saklaw, lalabas ang label sa itaas na gilid na may ▲ arrow na nagsasaad ng \"sa itaas ng nakikitang saklaw\".",
+    htu_s2_title: "Hakbang 2. Hanapin ang kasalukuyang round at ang susunod na round",
+    htu_s2_body: "Makakakita ka ng dalawang card. Ang <strong>card sa itaas</strong> ay ang round na kasalukuyang isinasagawa (LIVE), kung saan makikita mo ang pool ratio ngunit hindi ka na makakasali. Ang <strong>card sa ibaba</strong> ay ang <strong>susunod na round</strong>, kung saan mo ilalagay ang iyong prediksyon. Kailangan mong magsumite bago matapos ang live round.",
+    htu_s3_title: "Hakbang 3. Kumpirmahin ang iyong entry",
+    htu_s3_body: "Pagkatapos pumili ng UP o DOWN, magbubukas ang isang Enter modal. Itakda ang iyong halaga, pagkatapos ay tingnan ang <strong>Estimated win</strong>, na siyang inaasahang bayad batay sa kasalukuyang pool ratio. Sinasabi sa iyo ng abiso sa ibaba na <strong>napapinal ang multiplier kapag naka-lock na ang round</strong>, kaya maaaring bahagyang mag-iba ang aktwal na bayad. Kapag handa ka na, i-click ang <strong>Enter X CHZ on UP / DOWN</strong> upang kumpirmahin.",
+    htu_s4_title: "Hakbang 4. Subaybayan ang iyong entered na posisyon",
+    htu_s4_body: "Kapag nakumpirma na, ipinapakita ng iyong card ang <strong>ENTERED</strong> (halaga at direksyon ng iyong taya) at <strong>EST. PAYOUT</strong>, na parehong nina-update nang real-time habang nagbabago ang pool ratio. Ang pink/pulang border sa paligid ng card ay nangangahulugang ito ang iyong naka-lock na posisyon. Hindi mo na ito makakansela; panoorin na lang ang pagtatapos ng round.",
+    htu_s5_title: "Hakbang 5. Natapos ang round, yugto ng Calculating",
+    htu_s5_body: "Kapag natapos na ang live na yugto, lalabas nang panandalian ang <strong>Calculating</strong> modal habang bini-verify ng sistema ang Closed Price sa on-chain at kinukwenta ang resulta. Karaniwang ilang segundo lang ito. Patuloy na naka-highlight nang may pulang border ang iyong naka-lock na entry card.",
+    htu_s6_title: "Hakbang 6. Indicator ng claim sa iyong wallet",
+    htu_s6_body: "Kapag na-settle ang round pabor sa iyo, magkakaroon ng <strong>pulang border</strong> ang wallet button (kanang itaas) upang ipahiwatig na may hindi pa na-claim na gantimpala ka. I-click ang wallet, pagkatapos ay ang <strong>PORTFOLIO</strong> upang pumunta sa claim screen.",
+    htu_s7_title: "Hakbang 7. Mag-claim mula sa pahina ng Rounds",
+    htu_s7_body: "Sa talahanayan ng <strong>Rounds</strong> makikita mo ang lahat ng iyong nakaraang entry. Ang anumang hindi pa na-claim na panalo ay may berdeng <strong>Claim</strong> button sa hilera nito. Upang i-claim ang lahat nang sabay-sabay, i-click ang <strong>Claim all →</strong> sa kanang itaas ng pahina.",
+
+    mech_title: "Mekanika at Bayarin",
+    mech_subtitle: "Mga teknikal na detalye tungkol sa mga round, bayarin, at pagkalkula ng bayad.",
+    mech_chain: "<strong>Blockchain:</strong> Pinapagana ng Chiliz Chain (Mainnet).",
+    mech_round: "<strong>Dalas ng Round:</strong> Nagaganap ang rolling rounds bawat 10 minuto.",
+    mech_minentry: "<strong>Minimum na Entry:</strong> 10 CHZ bawat round (walang pinakamataas na limitasyon).",
+    mech_fee: "<strong>Bayad sa Platform:</strong> Isang maliit na bahagi ng kabuuang prize pool ang inilalaan sa $FAN. Ang mga pondong ito ay nakatuon sa patuloy na pagpapaunlad ng platform at napapailalim din sa buyback at burn.",
+    mech_claim: "<strong>Mga Panalo:</strong> Maaaring i-claim ng mga user ang kanilang gantimpala kaagad pagkatapos ma-finalize ang round at ma-verify ang on-chain data.",
+    mech_payout_title: "Pagkalkula ng Bayad",
+    mech_payout_desc: "Ang mga bayad ay batay sa ratio ng mga taya sa bawat pool:",
+    mech_formula: "Payout Ratio (UP Pool) = Kabuuang halaga ng dalawang pool &divide; Halaga ng UP Pool<br>Payout Ratio (DOWN Pool) = Kabuuang halaga ng dalawang pool &divide; Halaga ng DOWN Pool",
+    mech_q1_title: "Paano talaga kinakalkula ang mga bayad?",
+    mech_q1_body: "Ang iyong gantimpala ay nakadepende sa kung ilang tao ang tumaya sa iyong panig kumpara sa kabilang panig. Habang mas kaunti ang tao sa panig na nanalo, mas malaki ang bahagi ng bawat panalo. Narito ang isang konkretong halimbawa.",
+    mech_q1_ex_label: "Halimbawa.",
+    mech_q1_ex_body: " Nagtapos ang isang round na may UP pool na 1,000 CHZ at DOWN pool na 2,000 CHZ, pinagsamang 3,000 CHZ. Tumaya ka ng 10 CHZ sa UP. Payout Ratio (UP) = 3,000 ÷ 1,000 = 3x. Nanalo ang UP → ang iyong gross na gantimpala = 10 × 3 = 30 CHZ, bawas ang maliit na bayad sa platform. Dahil ang UP ang mas maliit na panig, mas malaking multiplier ang nakuha ng bawat panalo sa UP. <strong>Mas maliit na panig = mas malaking gantimpala bawat CHZ.</strong>",
+    mech_q2_title: "Ano ang ibig sabihin ng \"buyback at burn\"?",
+    mech_q2_body: "Isang bahagi ng mga bayad sa platform ang ginagamit upang <strong>bumili ng $FAN token sa bukas na merkado</strong> at pagkatapos ay permanenteng sirain (\"burn\") ang mga ito. Binabawasan ng pagsunog ang kabuuang supply ng $FAN sa paglipas ng panahon, na maaaring sumuporta sa pangmatagalang halaga nito. Sa madaling salita: ang bawat round na nilalaro mo ay nag-aambag nang kaunti upang gawing mas bihira ang $FAN.",
+    mech_q3_title: "Ano ang ibig sabihin ng \"rolling rounds bawat 10 minuto\"?",
+    mech_q3_body: "May bagong round na bumubukas bawat 10 minuto, tulad ng orasan. Hindi mo kailangang maghintay na ganap na matapos ang isang round bago sumali sa susunod; nagsasapawan ang mga round, kaya laging may tumatanggap ng entry. Kung hindi ka sigurado sa kasalukuyang round, maaari mo itong laktawan at ang susunod na pagkakataon ay ilang minuto na lang ang layo.",
+
+    out_title: "Mga Resulta at Espesyal na Panuntunan",
+    out_subtitle: "Kung ano ang nangyayari pagkatapos magsara ang isang round.",
+    out_victory: "<strong>Tagumpay:</strong> Hatiin ang kabuuang prize pool kasama ang mga kapwa panalo.",
+    out_loss: "<strong>Pagkatalo:</strong> Ang iyong entry ay napupunta sa panalong panig ng pool.",
+    out_tie: "<strong>Tabla (Locked Price = Closed Price):</strong> Sa bihirang pagkakataon ng eksaktong pagtutugma ng presyo, pinananatili ng house ang lahat ng entry.",
+    out_single: "<strong>One-Sided na Pagtaya:</strong> Kung walang kalabang taya, makukuhang muli ng mga panalo ang kanilang unang entry bawas ang service fee.",
+    out_cancel: "<strong>Pagkansela ng Sistema:</strong> Kung magkaroon ng Oracle error, makakatanggap ang lahat ng kalahok ng 100% refund ng kanilang unang entry.",
+    out_q1_title: "Ano ang nangyayari sa tabla?",
+    out_q1_body: "Ang tabla ay nangangahulugang ang Closed Price ay <strong>eksaktong kapareho</strong> ng Locked Price, hanggang sa huling decimal. Dahil sinusubaybayan ang CHZ hanggang sa maraming decimal place at ina-update bawat segundo, napakabihira nito, ngunit maaaring mangyari.",
+    out_q1_ex_label: "Halimbawa.",
+    out_q1_ex_body: " Locked Price = $0.08200000, Closed Price = $0.08200000. Dahil hindi tumaas o bumaba ang presyo, ni UP ni DOWN ay hindi \"tama\". Naging tabla ang round, at napupunta sa house ang lahat ng entry.",
+    out_q2_title: "Paano kung walang tumaya sa kabilang panig?",
+    out_q2_body: "Ang isang round ay may tunay na merkado lamang kapag may mga taya sa <strong>parehong</strong> UP at DOWN. Kung lahat ay nagsisiksikan sa isang panig, walang kalabang pool na mapapanalunan.",
+    out_q2_ex_label: "Halimbawa.",
+    out_q2_ex_body: " Bumukas ang isang round. 50 manlalaro ang tumaya ng kabuuang 800 CHZ sa UP. 0 manlalaro ang tumaya sa DOWN. \"Nanalo\" ang UP dahil tumaas ang presyo, ngunit walang makukuha mula sa hindi umiiral na DOWN pool. Sa kasong ito, makukuhang muli lang ng bawat manlalaro sa UP ang <strong>kanilang unang entry, bawas ang maliit na service fee</strong>. Hindi ka pinaparusahan sa pagiging tanging panig; hindi ka lang nakakakuha ng multiplier.",
+    out_q3_title: "Ano ang \"Oracle error\", at ano ang nangyayari pagkatapos?",
+    out_q3_body: "Umaasa ang platform sa isang price feed (ang Oracle) upang malaman kung ano ang CHZ/USD sa simula at katapusan ng bawat round. Kung mabigo ang Oracle na magbigay ng wastong presyo sa anumang dahilan (hal. pansamantalang outage, hindi wastong data, o <strong>downtime sa Pyth Network mismo</strong>), hindi maaaring ma-settle nang patas ang round.",
+    out_q3_tail: "Kapag nangyari ito, ang round ay <strong>kinakansela</strong> at ang bawat kalahok ay nakakakuha ng <strong>100% refund</strong> ng kanilang unang entry, panalo man o talo. Nalalapat ang proteksyong ito kahit ang isyu ay nasa aming panig o sa panig ng Pyth Network. Walang pinaparusahan sa problemang hindi nila kasalanan.",
+
+    oracle_title: "Mga Price Feed (Oracle)",
+    oracle_subtitle: "Kung paano tinutukoy ng UP &amp; DOWN ang presyo ng CHZ para sa bawat round.",
+    oracle_intro: "Inuuna ng UP &amp; DOWN ang katumpakan at bilis sa pamamagitan ng paggamit ng <strong>Pyth Network</strong> bilang pangunahing data source nito.",
+    oracle_th_chain: "Chain",
+    oracle_th_market: "Merkado",
+    oracle_th_purpose: "Layunin",
+    oracle_th_oracle: "Oracle",
+    oracle_td_purpose: "Itinatakda ang Locked Price at Closed Price (ina-update humigit-kumulang bawat 20 segundo).",
+    oracle_q1_title: "Ano ang isang \"Price Oracle\"?",
+    oracle_q1_body: "Ang mga blockchain sa kanilang sarili ay hindi nakakakita ng panlabas na mundo; likas na hindi nila alam ang mga bagay tulad ng \"magkano ang trading ng CHZ ngayon?\" Ang Oracle ay isang serbisyo na nagdadala ng real-world na data (tulad ng mga presyo mula sa mga exchange) papunta sa blockchain sa isang nape-verify na paraan, upang magamit ito ng mga smart contract.",
+    oracle_q1_tail: "Sa UP &amp; DOWN, ang Oracle ang nagsasabi sa smart contract ng presyo ng CHZ/USD sa simula at katapusan ng bawat round. Kung wala ito, walang paraan ang contract upang magpasya kung sino ang nanalo.",
+    oracle_why_title: "Bakit Pyth Network?",
+    oracle_why_body: "Hindi tulad ng mga tradisyonal na oracle, nagbibigay ang Pyth ng <strong>sub-second na latency</strong> at <strong>institutional-grade na data nang direkta mula sa first-party na pinagmumulan ng pananalapi</strong>; ibig sabihin, ang aktwal na mga exchange at market maker na gumagawa ng mga presyo, hindi tagapamagitan.",
+    oracle_why_list_intro: "Tinitiyak nito na ang mga presyong ginagamit para sa settlement ay:",
+    oracle_why_transparent: "<strong>Transparent:</strong> kahit sino ay maaaring mag-verify ng data sa on-chain.",
+    oracle_why_resistant: "<strong>Lumalaban sa manipulasyon:</strong> ang mga presyo ay pinagsama-sama mula sa maraming nangungunang pinagmulan, kaya walang iisang masamang aktor ang makakagalaw sa mga ito.",
+    oracle_why_accurate: "<strong>Tumpak:</strong> sinasalamin nila ang tunay na pandaigdigang halaga sa merkado ng CHZ sa eksaktong sandali ng pagsasara ng round.",
+
+    contract_title: "Mga Contract Address",
+    contract_subtitle: "Mga on-chain address na ginagamit ng platform ng UP &amp; DOWN.",
+    contract_q1_title: "Ano ang isang \"Contract Address\"?",
+    contract_q1_body: "Ang contract address ay ang on-chain na lokasyon ng smart contract na nagpapatakbo ng laro. Isipin mo itong pampublikong mailing address para sa code mismo. Kahit sino ay maaaring maghanap nito sa isang block explorer (tulad ng ChiliScan para sa Chiliz Chain) upang suriin kung ano ang ginagawa ng contract at i-verify na ang platform ay gumagamit ng eksaktong sinasabi nito.",
+    contract_q1_tail: "Kung nais mong kumpirmahin na lehitimo ang price feed, ang pagkopya ng address na ito sa isang block explorer ang paraan upang gawin ito."
   }
 };
 
@@ -1147,7 +1276,7 @@ const langBtn = document.getElementById('langBtn');
 const langMenu = document.getElementById('langMenu');
 const langOptions = document.querySelectorAll('.lang-option');
 const currentLangSpan = document.getElementById('currentLang');
-const langNames = { en: 'English', ko: '한국어', zh: '中文', ja: '日本語', th: 'ไทย', id: 'Bahasa Indonesia', tr: 'Türkçe' };
+const langNames = { en: 'English', ko: '한국어', zh: '中文', ja: '日本語', th: 'ไทย', id: 'Bahasa Indonesia', tr: 'Türkçe', tl: 'Filipino' };
 
 langBtn.addEventListener('click', (e) => {
   e.stopPropagation();
